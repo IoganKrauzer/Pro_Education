@@ -15,3 +15,4 @@ if (number == 6) Console.WriteLine("Суббота!");
 if (number == 7) Console.WriteLine("Воскресенье!");
 if (number < 1) Console.WriteLine("Неверный номер!");
 if (number > 7) Console.WriteLine("Неверный номер!");
+     
