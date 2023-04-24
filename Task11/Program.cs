@@ -8,7 +8,7 @@
 
 Console.Clear();
 int number = new Random().Next(100, 1000);
-Console.WriteLine("Случайное число в отрезке от 10 ... 90 " + number);
+Console.WriteLine("Случайное число в отрезке от 100 ... 999 " + number);
 
 
 int answer = Digit(number);
