@@ -16,7 +16,7 @@ if (n <= 0)
 
 else
 {
-    while (count < n + 1)
+    while (count <= n )
     {
         if (count % 2 == 0)
         {
