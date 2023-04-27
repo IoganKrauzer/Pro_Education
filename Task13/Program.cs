@@ -11,9 +11,11 @@ Console.WriteLine("Введите число");
 int number = Convert.ToInt32(Console.ReadLine());
 
 
+number = -number;
 
-if (number < 0) number = number * (-1);
-if (number >= 0 && number < 100) Console.WriteLine("У числа нет третьей цифры");
+Console.WriteLine(number);
+
+if (number < 100) Console.WriteLine("У числа нет третьей цифры");
 
 else
 {
@@ -25,10 +27,17 @@ else
 
 int RemDig(int num)
 {
-    while (number > 999)
+    while (num > 999)
     {
-        number = number / 10;
+        num = num / 10;
     }
-    return number % 10;
+    return num % 10;
+    
 }
 
+
+
+
+// number = -number
+
+// number *= -1
