@@ -55,5 +55,5 @@ int IntervCheck2(int nu)
 
 // bool IntervCheck(int nu)
 // {
-//     return (nu > -99999 && nu < -10000) || (nu > 10000 && nu < 99999);
+//     return (nu > -100000 && nu < -9999) || (nu > 9999 && nu < 100000);
 // }
