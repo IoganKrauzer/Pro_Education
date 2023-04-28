@@ -9,27 +9,51 @@
 
 
 Console.Clear();
-Console.WriteLine("Введите число ");
+Console.WriteLine("Введите пятизначное число ");
 int num = int.Parse(Console.ReadLine());
 
 
-int revNum = ReversNumb(num);
-string answer = (num == revNum && num != 0) ? $"Число: \" {num} \" является полидромом!" : $"Число: \" {num} \" не является полидромом!";
+num = IntervCheck2(num);
+bool palindr = PalindrFunc(num);
+string answer = palindr == true ? $"Число: {num} является палиндромом!" : $"Число: {num} не является палиндромом!";
 Console.WriteLine(answer);
 
 
-int ReversNumb(int n)
+
+bool PalindrFunc(int n)
 {
-    int reverse = 0;
-    if (n <= -10 || n >= 10)
-    {
-        while (n != 0)
-        {
-            int remain = n % 10;
-            reverse = reverse * 10 + remain;
-            n = n / 10;
-        }
-        return (reverse);
-    }
-    return 0;
+    int firstN = n / 10000;
+    int fifthN = n % 10;
+    int secN = (n / 1000) % 10;
+    int fourthN = (n % 100) / 10;
+    return (firstN == fifthN && secN == fourthN) ? true : false;
 }
+
+
+
+int IntervCheck2(int nu)
+{
+    while ((nu < -99999) || ((nu > -10000) &&(nu < 10000)) || (nu > 99999))
+    {
+        Console.WriteLine ("Число не является пятизначным!");
+        Console.WriteLine("Введите новое число ");
+        nu = int.Parse(Console.ReadLine());
+    }
+    return nu;
+}
+
+// Boolean ПРОВЕРКА:
+
+// bool check = IntervCheck(num);
+
+// if (check == true)
+// {
+//     bool palindr = ReversNumb(num);
+//     string answer = palindr == true ? $"Число: {num} является палиндромом!" : $"Число: {num} не является палиндромом!";
+//     Console.WriteLine(answer);
+// }
+
+// bool IntervCheck(int nu)
+// {
+//     return (nu > -99999 && nu < -10000) || (nu > 10000 && nu < 99999);
+// }
