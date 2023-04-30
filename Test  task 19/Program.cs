@@ -1,22 +1,30 @@
 ﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 // Выполнить с помощью числовых операций (целочисленное деление, остаток от деления).
+
 // 14212 -> нет
+
 // 12821 -> да
+
 // 23432 -> да
 
 
 Console.Clear();
-
 Console.WriteLine("Введите пятизначное число ");
-int num = Convert.ToInt32(Console.ReadLine());
 
+int num = int.Parse(Console.ReadLine());
 
-
-num = IntervCheck2(num);
-bool palindr = PalindrFunc(num);
-string answer = palindr == true ? $"Число: {num} является палиндромом!" : $"Число: {num} не является палиндромом!";
-Console.WriteLine(answer);
-
+if (num >= 0)
+{
+    num = IntervCheck2(num);
+    bool palindr = PalindrFunc(num);
+    string answer = palindr == true ? $"Число: {num} является палиндромом!" : $"Число: {num} не является палиндромом!";
+    Console.WriteLine(answer);
+}
+else
+{
+    Console.WriteLine($"Число: \"{num}\" является отрицательным числом.");
+    Console.WriteLine("Отрицательные числа не могут быть палиндромами!");
+}
 
 
 bool PalindrFunc(int n)
@@ -31,17 +39,14 @@ bool PalindrFunc(int n)
 
 int IntervCheck2(int nu)
 {
-  
-    while ((nu < -99999) || ((nu > -10000) &&(nu < 10000)) || (nu > 99999))
+    while ((nu < 10000) || (nu > 99999))
     {
-        Console.WriteLine ("Число не является пятизначным!");
+        Console.WriteLine("Число не является пятизначным!");
         Console.WriteLine("Введите новое число ");
         nu = Convert.ToInt32(Console.ReadLine());
     }
     return nu;
 }
-   
-
 
 // Boolean ПРОВЕРКА:
 
@@ -56,5 +61,14 @@ int IntervCheck2(int nu)
 
 // bool IntervCheck(int nu)
 // {
-//     return (nu > -99999 && nu < -10000) || (nu > 10000 && nu < 99999);
+//     return (nu > -100000 && nu < -9999) || (nu > 9999 && nu < 100000);
+// }
+
+// if (palindrome)
+// {
+//     Console.WriteLine($"число {number} -> являеться палиндромом");
+// }
+// else
+// {
+//     Console.WriteLine($"Число {number} -> не является палиндромом");
 // }
