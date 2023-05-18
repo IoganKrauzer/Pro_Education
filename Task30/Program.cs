@@ -7,7 +7,7 @@ Console.Clear();
 
 int[] array = new int[8];
 
-CreateArray(array);
+FillArray(array);
 Console.Write("[ ");
 SeeArray(array);
 Console.Write("]");
@@ -15,9 +15,9 @@ Console.WriteLine("\n");
 
 
 
-void CreateArray(int[] arr)
+void FillArray(int[] arr)
 {
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
         arr[i] = new Random().Next(0, 2);
     }
@@ -25,8 +25,12 @@ void CreateArray(int[] arr)
 
 void SeeArray(int[] arr)
 {
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(array[i] + ", ");
+        if (i < arr.Length - 1)
+        {
+            Console.Write(array[i] + ", ");
+        }
+        else  Console.Write(array[i] + " ");
     }
 }
