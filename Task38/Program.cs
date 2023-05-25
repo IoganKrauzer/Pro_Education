@@ -18,8 +18,8 @@ SeeDoubleArray(array, ",");
 Console.Write("] ");
 Console.Write($"-> {Math.Round(DeductionMinFromMax(array, minElemInArray, maxElemInArray), 1)}\n");
 Console.WriteLine();
-Console.Write($"Разница между максимальным элементом массива {maxElemInArray} и "
-            + $" минимальным элементом {minElemInArray}"
+Console.Write($"Разница между максимальным элементом массива {Math.Round(maxElemInArray, 1)} и "
+            + $" минимальным элементом {Math.Round(minElemInArray, 1)}"
             + $" составляет: {Math.Round(DeductionMinFromMax(array, minElemInArray, maxElemInArray), 1)}\n");
 
 
