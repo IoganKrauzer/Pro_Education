@@ -4,7 +4,7 @@ int row = Prompt("Введите кол-во строк");
 int col = Prompt("Введите кол-во столбцов");
 int[,] array = CreateArray(row, col);
 
-SeeArray(array, ",");
+// SeeArray(array, ",");
 
 void SeeArray(int[] arr, string sep = ",", string bracketF = "[ ", string bracketB = " ]")
 {
@@ -39,15 +39,15 @@ int[,] CreateArray(int r, int c)
     return arr;
 }
 
-void SeeArray(int[,] arr, string sep)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-         for (int j = 0; j < arr.GetLength(1); j++)
-        {
-          Console.Write($"{arr[i, j]}{sep} ");
-        }
-        Console.WriteLine();
-    }
+// void SeeArray(int[,] arr, string sep)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//          for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//           Console.Write($"{arr[i, j]}{sep} ");
+//         }
+//         Console.WriteLine();
+//     }
    
-}
+// }
