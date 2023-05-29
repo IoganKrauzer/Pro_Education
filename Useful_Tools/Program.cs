@@ -51,3 +51,35 @@ int[,] CreateArray(int r, int c)
 //     }
    
 // }
+
+
+// int[] CreateArrayForCount(int count)
+// {
+//     int[] arr = new int[count];
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         arr[i] = Prompt($"Введите число № {i + 1} !");
+//     }
+//     return arr;
+
+// }
+
+
+// int Prompt(string message)
+// {
+//     Console.WriteLine(message);
+//     int result = Convert.ToInt32(Console.ReadLine());
+//     return result;
+// }
+
+
+// void SeeArray(int[] arr,  string bracketF = "[ ", string bracketB = " ]", string sep = ",")
+// {
+//     Console.Write($"{bracketF}");
+//     for (int i = 0; i < arr.Length - 1; i++)
+//     {
+//         Console.Write($"{arr[i]}{sep} ");
+//     }
+//     Console.Write($"{arr[arr.Length - 1]}");
+//     Console.Write($"{bracketB}");
+// }
