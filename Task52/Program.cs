@@ -17,7 +17,7 @@ int maxValue = Prompt("Введите максимальное число для
 int[,] array2d = CreatMatrixRndInt(rows, columns, minValue, maxValue);
 PrintMatrixArray(array2d);
 double[] array = CreateDoubleArrayForSumOfColums(columns);
-array = AverageSumofColums(array, array2d);
+array = AverageSumOfColums(array, array2d);
 Console.WriteLine("Среднее арифметичское каждого столбца: ");
 PrintArray(array);
 
@@ -25,7 +25,7 @@ PrintArray(array);
 
 
 
-double[] AverageSumofColums(double[] ar, int[,] arr)
+double[] AverageSumOfColums(double[] ar, int[,] arr)
 {
 
     for (int j = 0; j < arr.GetLength(1); j++)
@@ -60,7 +60,6 @@ void PrintMatrixArray(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
-
         for (int j = 0; j < arr.GetLength(1); j++)
         {
             Console.Write($"{arr[i, j],5} ");
@@ -69,6 +68,7 @@ void PrintMatrixArray(int[,] arr)
     }
     Console.WriteLine();
 }
+
 
 double[] CreateDoubleArrayForSumOfColums(int size)
 {
@@ -83,6 +83,7 @@ int Prompt(string message)
     int result = Convert.ToInt32(Console.ReadLine());
     return result;
 }
+
 
 void PrintArray(double[] ar, char sep = ';')
 {
