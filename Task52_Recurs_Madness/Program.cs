@@ -16,28 +16,31 @@ int maxValue = Prompt("Введите максимальное число для
 
 int[,] array2d = CreatMatrixRndInt(rows, columns, minValue, maxValue);
 PrintMatrixArray(array2d);
-double[] array = CreateDoubleArrayForSumOfColums(columns);
-array = AverageSumofColums(array, array2d);
+double[] array = CreateDoubleArrayForSumOfColumns(columns);
+array = AverageSumofColumns(array, array2d);
 Console.WriteLine("Среднее арифметичское каждого столбца: ");
 PrintArray(array);
 
 
 
 
-
-double[] AverageSumofColums(double[] ar, int[,] arr)
+int RecursionToFindColumnsSum(int[,] arr, int row = 0, int col = 0)
 {
 
-    for (int j = 0; j < arr.GetLength(1); j++)
+    if (row >= arr.GetLength(0)) return 0;
+    return arr[row, col] + RecursionToFindColumnsSum(arr, row + 1, col);
+}
+
+
+double[] AverageSumofColumns (double [] ar, int[,] arr, int row = 0, int col = 0)
+{
+    double sumOfColums = 0;
+    for (col = 0; col < arr.GetLength(1); col++)
     {
-        double sumOfColums = 0;
-        for (int i = 0; i < arr.GetLength(0); i++)
-        {
-            sumOfColums += arr[i,j];
-        }
-        ar[j] = Math.Round(sumOfColums / arr.GetLength(0), 1);
+      sumOfColums = RecursionToFindColumnsSum( arr,  row , col );
+     ar[col] = Math.Round(sumOfColums / arr.GetLength(0), 1) ;
     }
-    return ar;
+return ar;
 }
 
 
@@ -70,12 +73,6 @@ void PrintMatrixArray(int[,] arr)
     Console.WriteLine();
 }
 
-double[] CreateDoubleArrayForSumOfColums(int size)
-{
-    double[] ar = new double[size];
-    return ar;
-}
-
 
 int Prompt(string message)
 {
@@ -83,6 +80,7 @@ int Prompt(string message)
     int result = Convert.ToInt32(Console.ReadLine());
     return result;
 }
+
 
 void PrintArray(double[] ar, char sep = ';')
 {
@@ -93,3 +91,9 @@ void PrintArray(double[] ar, char sep = ';')
     Console.WriteLine("\n");
 }
 
+
+double[] CreateDoubleArrayForSumOfColumns(int size)
+{
+    double[] ar = new double[size];
+    return ar;
+}
