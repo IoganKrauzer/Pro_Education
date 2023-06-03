@@ -88,7 +88,7 @@ void PrintMatrixArray(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write($"{arr[i, j],5} ");
+            Console.Write($"{arr[i, j],4} ");
         }
         Console.WriteLine();
     }

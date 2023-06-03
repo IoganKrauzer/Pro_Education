@@ -1,4 +1,13 @@
-﻿int rows = Prompt("Введите кол-во строк первого массива");
+﻿/* Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+Например, на выходе получается вот такой массив:
+01 02 03 04
+12 13 14 05
+11 16 15 06
+10 09 08 07 */
+
+Console.Clear();
+
+int rows = Prompt("Введите кол-во строк первого массива");
 int columns = Prompt("Введите кол-во столбцов первого массива");
 
 int[,] array2d = new int[rows, columns];
@@ -8,7 +17,8 @@ PrintMatrixArray(array2d);
 
 
 
-void FillArraySpiralByRecursion(int[,] arr, int rowIndex, int colIndex, int rowHighBoundry, int colHighBoundry, int fillNum = 1)
+
+ void FillArraySpiralByRecursion(int[,] arr, int rowIndex, int colIndex, int rowHighBoundry, int colHighBoundry, int fillNum = 1)
 {
     for (int i = rowIndex; i <= colHighBoundry; i++)
     {
@@ -24,7 +34,7 @@ void FillArraySpiralByRecursion(int[,] arr, int rowIndex, int colIndex, int rowH
 
     if (rowIndex + 1 <= rowHighBoundry)
     {
-        int indeX = colHighBoundry;
+        int indeX = colHighBoundry ;
         for (int i = indeX; i >= colIndex; i--)
         {
             arr[rowHighBoundry, i] = fillNum;
@@ -47,8 +57,8 @@ void FillArraySpiralByRecursion(int[,] arr, int rowIndex, int colIndex, int rowH
         FillArraySpiralByRecursion(arr, rowIndex + 1, colIndex + 1, rowHighBoundry - 1, colHighBoundry - 1, fillNum);
     }
 }
-
-
+ 
+    
 void PrintMatrixArray(int[,] arr)
 {
     Console.WriteLine();
@@ -70,3 +80,5 @@ int Prompt(string message)
     int result = Convert.ToInt32(Console.ReadLine());
     return result;
 }
+
+

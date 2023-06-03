@@ -8,9 +8,10 @@
 
 Console.Clear();
 
-int[,] array2d = CreatMatrixRndInt(4, 4, 1, 9);
+int[,] array2d = CreatMatrixRndInt(5, 9, 1, 30);
 PrintMatrixArray(array2d);
 UsingSortByChoiceFromMaxToMinInRowInMatrixArray(array2d);
+Console.WriteLine("Двухмерный массив с упорядоченными элементами по убыванию в каждой строке :");
 PrintMatrixArray(array2d);
 
 
@@ -57,6 +58,7 @@ int[,] CreatMatrixRndInt(int row, int col, int minV, int maxV)
 
 void PrintMatrixArray(int[,] arr)
 {
+    Console.WriteLine();
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)

@@ -11,19 +11,18 @@
 
 Console.Clear();
 
-int[,] array2d = CreatMatrixRndInt(4, 4, 1, 9);
+int[,] array2d = CreatMatrixRndInt(9, 5, -10, 10);
 PrintMatrixArray(array2d);
 int[] sumOfRowsArr = SumOfRowsInArray2d(array2d);
-PrintArray(sumOfRowsArr);         
-Console.WriteLine($@"Строка с наименьшей суммой № {RowWithLessSum(sumOfRowsArr) + 1}" + "\n"
-             +$"Сумма элементов строки: {sumOfRowsArr[RowWithLessSum(sumOfRowsArr)]}"+ "\n");
+PrintArray(sumOfRowsArr);
+Console.WriteLine($"\nСтрока с наименьшей суммой № {RowWithLessSum(sumOfRowsArr) }" + "\n"
+             + $"Сумма элементов строки: {sumOfRowsArr[RowWithLessSum(sumOfRowsArr)]}" + "\n");
 
 
 
 
 
-
-int RowWithLessSum (int[] ar)
+int RowWithLessSum(int[] ar)
 {
     int lessSumIndex = 0;
     for (int i = 1; i < ar.Length; i++)
@@ -84,8 +83,8 @@ void PrintArray(int[] ar)
 {
     for (int i = 0; i < ar.Length; i++)
     {
-       
-            Console.Write($"{ar[i],5} ");
+
+        Console.Write($"{ar[i],5} ");
     }
     Console.WriteLine();
 }
