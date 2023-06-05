@@ -10,7 +10,7 @@ int number2 = Prompt("Введите второе число ");
 
 if (IsNumbersAreNatural(number1, number2))
 {
-    Console.WriteLine($" Первое число = {number1}, Второе число = {number2} -> A({number1},{number2}) = {MethToFindAckermannValuesByLoop(number1, number2)}");
+    Console.WriteLine($" Первое число = {number1}, Второе число = {number2} -> A({number1},{number2}) = {MethToFindAckermannValuesByRecurs(number1, number2)}");
 }
 else
 {
@@ -21,19 +21,11 @@ else
 
 
 
-int MethToFindAckermannValuesByLoop(int num1, int num2)
+int MethToFindAckermannValuesByRecurs(int num1, int num2)
 {
-    while (num1 != 0)
-    {
-        if (num2 == 0) num2 = 1;
-
-        else
-        {
-            num2 = MethToFindAckermannValuesByLoop(num1, num2 - 1);
-        }
-        num1 -= 1;
-    }
-    return num2 + 1;
+    if (num1 == 0) return num2 + 1;
+    else if (num2 == 0) return MethToFindAckermannValuesByRecurs(num1 - 1, 1);
+    return MethToFindAckermannValuesByRecurs(num1 - 1, MethToFindAckermannValuesByRecurs(num1, num2 - 1));
 }
 
 
@@ -49,6 +41,10 @@ int Prompt(string message)
     int result = Convert.ToInt32(Console.ReadLine());
     return result;
 }
+
+
+
+
 
 
 
